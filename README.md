@@ -1,73 +1,7 @@
-# React + TypeScript + Vite
+# Ads Campaign Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ads Campaign Console is a React + TypeScript dashboard prototype built to explore data-heavy UI patterns commonly used in advertising, analytics, and internal operations tools. The project simulates an ads campaign management interface where users can view campaign performance, filter and sort campaign data, paginate results, inspect campaign details, and edit campaign settings through a validated form.
 
-Currently, two official plugins are available:
+The purpose of this project was to deepen my experience with TypeScript in a React application while practicing more production-oriented frontend architecture concepts. It uses React Query to manage server-style data fetching, loading, error, caching, and mutation flows; React Hook Form and Zod for form state and validation; and a fake async API layer to simulate backend filtering, sorting, pagination, and campaign updates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is intentionally focused on the kinds of UI engineering concerns that show up in real dashboard applications: separating server state from UI and form state, treating backend-confirmed data as the source of truth, handling asynchronous request states, validating user edits before save, and keeping table controls like sorting and pagination clear and predictable.
